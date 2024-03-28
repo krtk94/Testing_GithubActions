@@ -52,7 +52,7 @@ jobs:
         DOCKER_ACCESS_TOKEN: ${{ secrets.DOCKER_ACCESS_TOKEN }}
 
     - name: Build Docker Image
-      run: docker build -t gameoflife . 
+      run: docker build -t gameoflife:latest . 
 
     - name: Push Docker Image to dockerhub
-      run: docker push krtk94/gameoflife
+      run: docker push krtk94/gameoflife:latest
