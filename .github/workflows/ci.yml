@@ -8,4 +8,5 @@ jobs:
     steps:
       - name: user-name   # Added space after "-"
         run: whoami
-      - name: msg-print   # Added space afte
+      - name: msg-print
+        run: echo "hello-world"
