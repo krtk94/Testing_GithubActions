@@ -10,15 +10,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-<<<<<<< HEAD
     services:
       docker:
         image: docker:20.10.9
         options: --privileged
-=======
     container:
       image: maven:3.8.6-openjdk-8  # Use a custom Docker image with Java 8 and Maven 3.8.6
->>>>>>> parent of 73f5d61 (Update maven.yml)
 
     steps:
     - name: Checkout Repository
@@ -32,7 +29,6 @@ jobs:
       with:
         name: my-GOL-webApp
         path: gameoflife-web/target/gameoflife.war
-<<<<<<< HEAD
 
   build-docker:
     runs-on: ubuntu-latest
@@ -44,5 +40,3 @@ jobs:
 
     - name: Build Docker Image
       run: docker build -t my-docker-image .
-=======
->>>>>>> parent of 73f5d61 (Update maven.yml)
