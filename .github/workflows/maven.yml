@@ -46,4 +46,4 @@ jobs:
         path: gameoflife-web/target/
 
     - name: Build Docker Image
-      run: docker build -t my-docker-image 
+      run: docker build -t my-docker-image . 
