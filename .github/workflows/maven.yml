@@ -30,6 +30,12 @@ jobs:
         name: my-GOL-webApp
         path: gameoflife-web/target/gameoflife.war
 
+    - name: Download WAR artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: my-GOL-webApp
+        path: .
+
   build-docker:
     runs-on: ubuntu-latest
     needs: build
