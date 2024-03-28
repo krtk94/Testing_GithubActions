@@ -10,6 +10,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    services:
+        docker:
+          image: docker:20.10.9
+          options: --privileged
+
     container:
       image: maven:3.8.6-openjdk-8  # Use a custom Docker image with Java 8 and Maven 3.8.6
 
@@ -25,3 +30,9 @@ jobs:
       with:
         name: my-GOL-webApp
         path: gameoflife-web/target/gameoflife.war
+
+    - name: Build Docker Image
+      run: docker build -t gameoflife .
+
+    - name: Run Docker Container
+      run: docker run -d -p 8080:8080 gameoflife
