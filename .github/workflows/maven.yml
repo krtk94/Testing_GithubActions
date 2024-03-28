@@ -45,5 +45,14 @@ jobs:
         name: my-GOL-webApp
         path: gameoflife-web/target/
 
+    - name: Log in to Docker Hub
+      run: echo "${{ secrets.DOCKER_ACCESS_TOKEN }}" | docker login -u krtk94 --password-stdin
+      env:
+        DOCKER_USERNAME: krtk94
+        DOCKER_ACCESS_TOKEN: ${{ secrets.DOCKER_ACCESS_TOKEN }}
+
     - name: Build Docker Image
-      run: docker build -t my-docker-image . 
+      run: docker build -t GameOfLife . 
+
+    - name: Push Docker Image to dockerhub
+      run: docker push krtk94/GameOfLife
