@@ -1,12 +1,14 @@
+name: practice
+
 on:
   push:
-    branches: [main]   # Corrected "branch" to "branches"
+    branches: [main]
 
-jobs: 
-  verify-os:
+jobs:
+  build:
     runs-on: ubuntu-latest
-    steps:
-      - name: user-name   # Added space after "-"
-        run: whoami
-      - name: msg-print
-        run: echo "hello-world"
+  steps:
+    - name: compile with maven
+      uses: checkout@v2
+      run: echo "done"
+      
