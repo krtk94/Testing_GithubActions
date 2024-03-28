@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
   steps:
-    - name: compile with maven
+    - name: compile-with-maven
       uses: checkout@v2
       run: echo "done"
       
