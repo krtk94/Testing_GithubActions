@@ -55,4 +55,4 @@ jobs:
       run: docker build -t gameoflife:latest . 
 
     - name: Push Docker Image to dockerhub
-      run: docker push krtk94/gameoflife:latest
+      run: docker push gameoflife:latest
