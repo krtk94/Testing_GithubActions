@@ -46,9 +46,9 @@ jobs:
         path: gameoflife-web/target/
 
     - name: Log in to Docker Hub
-      run: echo "${{ secrets.DOCKER_ACCESS_TOKEN }}" | docker login -u krtk94 --password-stdin
+      run: echo "${{ secrets.DOCKER_ACCESS_TOKEN }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
       env:
-        DOCKER_USERNAME: krtk94
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_ACCESS_TOKEN: ${{ secrets.DOCKER_ACCESS_TOKEN }}
 
     - name: Build Docker Image
