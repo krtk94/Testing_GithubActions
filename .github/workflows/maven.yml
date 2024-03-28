@@ -32,7 +32,5 @@ jobs:
         path: gameoflife-web/target/gameoflife.war
 
     - name: Build Docker Image
-      run: docker build -t gameoflife .
-
-    - name: Run Docker Container
-      run: docker run -d -p 8080:8080 gameoflife
+      run: |
+        docker build -t my-docker-image .
