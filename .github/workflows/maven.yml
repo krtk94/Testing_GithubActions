@@ -19,3 +19,9 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+
+    - name: Upload WAR artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: my-GOL-webApp
+        path: target/*.war
