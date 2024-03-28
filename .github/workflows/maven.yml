@@ -24,4 +24,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: my-GOL-webApp
-        path: target/*.war
+        path: gameoflife-web/target/gameoflife.war
