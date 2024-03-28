@@ -6,8 +6,8 @@ on:
 jobs: 
   verify-os:
     runs-on: ubuntu-latest
-      steps: 
-       -name: user-name
+    steps:
+      -name: user-name
          run: whoami
        -name: msg-print
          run: echo "hello-world"
