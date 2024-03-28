@@ -1,13 +1,11 @@
-name: myWorkflow
 on:
   push:
-    branch: [main]
+    branches: [main]   # Corrected "branch" to "branches"
 
 jobs: 
   verify-os:
     runs-on: ubuntu-latest
     steps:
-      -name: user-name
-         run: whoami
-       -name: msg-print
-         run: echo "hello-world"
+      - name: user-name   # Added space after "-"
+        run: whoami
+      - name: msg-print   # Added space afte
