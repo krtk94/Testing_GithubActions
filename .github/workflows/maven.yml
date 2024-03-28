@@ -1,0 +1,27 @@
+name: Java CI with Maven
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    container:
+      image: maven:3.8.6-openjdk-8  # Use a custom Docker image with Java 8 and Maven 3.8.6
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml
+
+    - name: Upload WAR artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: my-GOL-webApp
+        path: gameoflife-web/target/gameoflife.war
